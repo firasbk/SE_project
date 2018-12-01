@@ -1,69 +1,50 @@
 package hu.uni.miskolc.iit.model;
 
+import java.util.Date;
+
 public class User {
 
-    public static class rr{
-
+    private enum Gender {
+        M, F, O
     }
-    private String lastName;
-    private String firstName;
+    private int id;
+    private String username;
     private String password;
+    private String firstName;
+    private String lastName;
+    private Gender gender;
+    private Date dob;
     private String email;
-    private long phoneNumber;
+    private String phone;
+    private boolean isManeger;
 
-    public User(){};
-
-    public User(String lastName, String firstName, String password, String email, long phoneNumber) {
-        checkName(lastName);
-        this.lastName = lastName;
-
-        checkName(firstName);
-        this.firstName = firstName;
-
-        checkPassword(password);
+    public User(int id, String username, String password, String firstName, String lastName, Gender gender, Date dob, String email, String phone, boolean isManeger) {
+        this.id = id;
+        this.username = username;
         this.password = password;
-
-        checkEmail(email);
-        this.email = email;
-
-        checkPhoneNumber(phoneNumber);
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        checkName(lastName);
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        checkName(firstName);
         this.firstName = firstName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        checkEmail(email);
+        this.lastName = lastName;
+        this.gender = gender;
+        this.dob = dob;
         this.email = email;
+        this.phone = phone;
+        this.isManeger = isManeger;
     }
 
-    public long getPhoneNumber() {
-        return phoneNumber;
+    public int getId() {
+        return id;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
-        checkPhoneNumber(phoneNumber);
-        this.phoneNumber = phoneNumber;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -71,40 +52,78 @@ public class User {
     }
 
     public void setPassword(String password) {
-        checkPassword(password);
         this.password = password;
     }
 
-    public void checkNeptunCode(String neptunCode){
-        if(neptunCode.length()!=6){
-            throw new IllegalArgumentException("Invalid neptun code");
-        }
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void checkName(String name){
-        if(name == null || name == ""){
-            throw new IllegalArgumentException("The name can't be null");
-        }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void checkEmail(String email){
-        if(email == null || email == ""){
-            throw new IllegalArgumentException("The email can't be null");
-        }
+    public String getLastName() {
+        return lastName;
     }
 
-    public void checkPassword(String psw){
-        if(psw == null || psw == ""){
-            throw new IllegalArgumentException("The password can't be null");
-        }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void checkPhoneNumber(long num){
-        long length = 1 + (long)Math.floor(Math.log10(num));
-        if(length !=6){
-            throw new IllegalArgumentException("The phone number must be 6 characters long, now it is: "+length);
-        }
+    public Gender getGender() {
+        return gender;
+    }
 
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public boolean isManeger() {
+        return isManeger;
+    }
+
+    public void setManeger(boolean maneger) {
+        isManeger = maneger;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
+                ", dob=" + dob +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", isManeger=" + isManeger +
+                '}';
     }
 }
-
