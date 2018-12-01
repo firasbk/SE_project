@@ -1,0 +1,9 @@
+hu\uni\miskolc\iit\exceptions\UserErrorException.class
+hu\uni\miskolc\iit\App.class
+hu\uni\miskolc\iit\model\Car.class
+hu\uni\miskolc\iit\service\CarService.class
+hu\uni\miskolc\iit\service\UserService.class
+hu\uni\miskolc\iit\model\User$rr.class
+hu\uni\miskolc\iit\model\User.class
+hu\uni\miskolc\iit\exceptions\CarErrorException.class
+hu\uni\miskolc\iit\exceptions\ListNotFoundException.class
