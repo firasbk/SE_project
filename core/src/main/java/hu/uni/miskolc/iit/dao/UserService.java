@@ -10,7 +10,7 @@ public interface UserService {
      * @param email
      * @param password
      */
-    public void userRegistration(String lastName, String firstName,  String email, String password) throws UserErrorException;
+    public void userRegistration(User user) throws UserErrorException;
 
     /**
      *
@@ -18,7 +18,7 @@ public interface UserService {
      * @param password
      * @return
      */
-    public boolean logger(String user, String password) throws UserErrorException;
+    public boolean logger(User user) throws EntryNotFoundException;
 
     /**
      *
@@ -27,12 +27,12 @@ public interface UserService {
      * @param email
      * @param password
      */
-    public void userModification(String lastName, String firstName,  String email, String password) throws UserErrorException;
+    public void userModification(User user) throws EntryNotFoundException;
 
     /**
      *
      * @param user
      */
-    public void userDelete(String user) throws UserErrorException;
+    public void userDelete(User user) throws EntryNotFoundException;
 
 }

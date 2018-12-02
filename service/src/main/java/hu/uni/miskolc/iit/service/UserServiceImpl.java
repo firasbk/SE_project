@@ -1,33 +1,54 @@
 package hu.uni.miskolc.iit.service;
 import hu.uni.miskolc.iit.dao.CarService;
 import hu.uni.miskolc.iit.dao.UserService;
-import hu.uni.miskolc.iit.dao.exceptions.CarErrorException;
 import hu.uni.miskolc.iit.dao.exceptions.ListNotFoundException;
 import hu.uni.miskolc.iit.dao.exceptions.UserErrorException;
 import hu.uni.miskolc.iit.dao.model.Car;
+import hu.uni.miskolc.iit.dao.UserDAO;
 
 import java.util.Collection;
 
 
 public class UserServiceImpl implements UserService {
 
-    @Override
-    public void userRegistration(String lastName, String firstName, String email, String password) throws UserErrorException {
+    private UserDAO userdao;
 
+    public UserServiceImpl(UserDAO userdao) {
+        this.userdao = userdao;
     }
 
     @Override
-    public boolean logger(String user, String password) throws UserErrorException {
+    public void userRegistration(User user) throws UserErrorException {
+        try {
+            userdao.createUser(user);
+        } catch (UserErrorException e) {
+            throw new UserErrorException;
+        }
+    }
+
+    @Override
+    public boolean logger(User user) throws ListNotFoundException {
+        //try {
+        //   userdao.listUsers()
+        //}
         return false;
     }
 
     @Override
-    public void userModification(String lastName, String firstName, String email, String password) throws UserErrorException {
-
+    public void userModification(User user) throws EntryNotFoundException {
+        try {
+            userdao.updateUser(user);
+        } catch (EntryNotFoundException e) {
+            throw new EntryNotFoundException;
+        }
     }
 
     @Override
-    public void userDelete(String user) throws UserErrorException {
-
+    public void userDelete(User user) throws EntryNotFoundException {
+        try {
+            userdao.deleteUser(user);
+        } catch (EntryNotFoundException e) {
+            throw new EntryNotFoundException;
+        }
     }
 }
