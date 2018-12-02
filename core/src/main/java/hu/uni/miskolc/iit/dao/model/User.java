@@ -7,6 +7,7 @@ public class User {
     private enum Gender {
         M, F, O
     }
+
     private int id;
     private String username;
     private String password;

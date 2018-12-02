@@ -2,7 +2,7 @@ package hu.uni.miskolc.iit.dao.model;
 
 public class Car {
 
-
+    private int id;
     private String model;
     private String color;
     private String brand;
@@ -10,13 +10,22 @@ public class Car {
     private int productYear;
     private int carParkId;
 
-    public Car(String model, String color, String brand, String plateNumber, int productYear, int carParkId){
+    public Car(int id, String model, String color, String brand, String plateNumber, int productYear, int carParkId){
+        this.id = id;
         this.model = model;
         this.color = color;
         this.brand = brand;
         this.plateNumber = plateNumber;
         this.productYear = productYear;
         this.carParkId = carParkId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModel() {
