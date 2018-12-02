@@ -1,5 +1,5 @@
-hu\uni\miskolc\iit\dao\DAOimpl\App.class
-hu\uni\miskolc\iit\dao\DAOimpl\CarRentDAOImpl.class
-hu\uni\miskolc\iit\dao\DAOimpl\CarParkDAOImpl.class
-hu\uni\miskolc\iit\dao\DAOimpl\CarDAOImpl.class
-hu\uni\miskolc\iit\dao\DAOimpl\UserDAOImpl.class
+hu\uni\miskolc\iit\dao\dao\DAOimpl\CarDAOImpl.class
+hu\uni\miskolc\iit\dao\dao\DAOimpl\CarParkDAOImpl.class
+hu\uni\miskolc\iit\dao\dao\DAOimpl\CarRentDAOImpl.class
+hu\uni\miskolc\iit\dao\dao\DAOimpl\UserDAOImpl.class
+hu\uni\miskolc\iit\dao\dao\DAOimpl\App.class
