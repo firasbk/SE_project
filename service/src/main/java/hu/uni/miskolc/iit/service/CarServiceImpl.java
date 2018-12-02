@@ -7,7 +7,6 @@ import hu.uni.miskolc.iit.dao.CarDAO;
 
 import java.util.Collection;
 
-
 public class CarServiceImpl implements CarService {
 
     private CarDAO cardao;

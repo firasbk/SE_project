@@ -1,30 +1,32 @@
 package hu.uni.miskolc.iit.dao.dao.DAOimpl;
 
-import hu.uni.miskolc.iit.dao.CarDAO;
-import hu.uni.miskolc.iit.dao.model.Car;
-import hu.uni.miskolc.iit.dao.exceptions.CarErrorException;
+import hu.uni.miskolc.iit.dao.CarParkDAO;
+import hu.uni.miskolc.iit.dao.model.CarPark;
+import hu.uni.miskolc.iit.dao.exceptions.CarParkErrorException;
 import hu.uni.miskolc.iit.dao.exceptions.EntryNotFoundException;
+import hu.uni.miskolc.iit.dao.exceptions.ListNotFoundException;
 
 import java.util.Collection;
 
-public class CarParkDAOImpl implements CarDAO {
+public class CarParkDAOImpl implements CarParkDAO {
+
     @Override
-    public void createCar(Car car) throws CarErrorException {
+    public void createCarPark(CarPark carPark) throws CarParkErrorException {
 
     }
 
     @Override
-    public Collection<Car> listCars() {
+    public Collection<CarPark> listCarParks() throws ListNotFoundException {
         return null;
     }
 
     @Override
-    public void updateCar(Car car) throws EntryNotFoundException {
+    public void updateCarPark(CarPark carPark) throws EntryNotFoundException {
 
     }
 
     @Override
-    public void deleteCar(Car car) throws EntryNotFoundException {
+    public void deleteCarPark(CarPark carPark) throws EntryNotFoundException {
 
     }
 }

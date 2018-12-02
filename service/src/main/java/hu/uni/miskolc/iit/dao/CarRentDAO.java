@@ -1,8 +1,9 @@
 package hu.uni.miskolc.iit.dao;
 
-import hu.uni.miskolc.iit.dao.model.Car;
-import hu.uni.miskolc.iit.dao.exceptions.CarErrorException;
+import hu.uni.miskolc.iit.dao.model.CarRent;
+import hu.uni.miskolc.iit.dao.exceptions.CarRentErrorException;
 import hu.uni.miskolc.iit.dao.exceptions.EntryNotFoundException;
+import hu.uni.miskolc.iit.dao.exceptions.ListNotFoundException;
 
 import java.util.Collection;
 
@@ -15,10 +16,10 @@ import java.util.Collection;
  */
 public interface CarRentDAO {
 
-    void createCar(Car car) throws CarErrorException;
+    void createCarRent(Car car) throws CarRentErrorException;
 
-    Collection<Car> listCars();
+    Collection<CarRent> listCarRents() throws ListNotFoundException;
 
-    void updateCar(Car car) throws EntryNotFoundException;
-    void deleteCar(Car car) throws EntryNotFoundException;
+    void updateCarRent(CarRent carRent) throws EntryNotFoundException;
+    void deleteCarRent(Car carRent) throws EntryNotFoundException;
 }
