@@ -1,12 +1,8 @@
 package hu.uni.miskolc.iit.service;
-import hu.uni.miskolc.iit.dao.CarService;
-import hu.uni.miskolc.iit.dao.UserService;
-import hu.uni.miskolc.iit.dao.exceptions.ListNotFoundException;
-import hu.uni.miskolc.iit.dao.exceptions.UserErrorException;
-import hu.uni.miskolc.iit.dao.model.Car;
+import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
+import hu.uni.miskolc.iit.exceptions.UserErrorException;
 import hu.uni.miskolc.iit.dao.UserDAO;
-
-import java.util.Collection;
+import hu.uni.miskolc.iit.model.User;
 
 
 public class UserServiceImpl implements UserService {
@@ -18,7 +14,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void userRegistration(User user) throws UserErrorException {
+    public User userRegistration(User user) throws UserErrorException {
         try {
             userdao.createUser(user);
         } catch (UserErrorException e) {
@@ -27,12 +23,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean logger(User user) throws ListNotFoundException {
+    //public boolean logger(User user) throws ListNotFoundException {
         //try {
         //   userdao.listUsers()
         //}
-        return false;
-    }
+        //return false;
+    //}
 
     @Override
     public void userModification(User user) throws EntryNotFoundException {

@@ -1,9 +1,7 @@
 package hu.uni.miskolc.iit.service;
-import hu.uni.miskolc.iit.dao.CarService;
-import hu.uni.miskolc.iit.dao.exceptions.CarErrorException;
-import hu.uni.miskolc.iit.dao.exceptions.ListNotFoundException;
-import hu.uni.miskolc.iit.dao.model.Car;
+import hu.uni.miskolc.iit.model.Car;
 import hu.uni.miskolc.iit.dao.CarDAO;
+import hu.uni.miskolc.iit.exceptions.*;
 
 import java.util.Collection;
 
@@ -16,11 +14,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void carCreation(Car car) throws CarErrorException {
+    public Car carCreation(Car car) throws CarErrorException {
         try {
-            cardao.createCar(car);
+            return cardao.createCar(car);
         } catch (CarErrorException e) {
-            throw new CarErrorException;
+            throw new CarErrorException();
         }
     }
 
@@ -29,25 +27,25 @@ public class CarServiceImpl implements CarService {
         try {
             return cardao.listCars();
         } catch (ListNotFoundException e) {
-            throw new ListNotFoundException(e);
+            throw new ListNotFoundException();
         }
     }
 
     @Override
-    public void carModification(Car car) throws EntryNotFoundException {
+    public Car carModification(Car car) throws CarErrorException {
         try {
             return cardao.updateCar(car);
         } catch (EntryNotFoundException e) {
-            throw new EntryNotFoundException(e);
+            throw new CarErrorException();
         }
     }
 
     @Override
-    public void carDelete(int carId) throws EntryNotFoundException {
+    public boolean carDelete(Car car) throws CarErrorException {
         try {
             return cardao.deleteCar(car);
         } catch (EntryNotFoundException e) {
-            throw new EntryNotFoundException(e);
+            throw new CarErrorException();
         }
     }
 }
