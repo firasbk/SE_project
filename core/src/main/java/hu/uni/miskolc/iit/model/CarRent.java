@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CarRent {
 
-    private enum Status {
+    public enum Status {
         CONFIRMED, PENDING, REJECTED
     }
 

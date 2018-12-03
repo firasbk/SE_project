@@ -6,27 +6,28 @@ import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 import hu.uni.miskolc.iit.model.User;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class UserDAOImpl implements UserDAO {
 
     @Override
-    public void createUser(User user) throws UserErrorException {
-
+    public User createUser(User user) throws UserErrorException {
+        return user;
     }
 
     @Override
     public Collection<User> listUsers() throws ListNotFoundException  {
-        return null;
+        return new ArrayList<User>();
     }
 
     @Override
-    public void updateUser(User user) throws EntryNotFoundException {
-
+    public User updateUser(User user) throws EntryNotFoundException {
+        return user;
     }
 
     @Override
-    public void deleteUser(User user) throws EntryNotFoundException {
-
+    public boolean deleteUser(User user) throws EntryNotFoundException {
+        return false;
     }
 }

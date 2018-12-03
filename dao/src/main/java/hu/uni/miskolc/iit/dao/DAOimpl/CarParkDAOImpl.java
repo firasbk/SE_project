@@ -8,25 +8,27 @@ import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 
 import java.util.Collection;
 
+import java.util.ArrayList;
+
 public class CarParkDAOImpl implements CarParkDAO {
 
     @Override
-    public void createCarPark(CarPark carPark) throws CarParkErrorException {
-
+    public CarPark createCarPark(CarPark carPark) throws CarParkErrorException {
+        return carPark;
     }
 
     @Override
     public Collection<CarPark> listCarParks() throws ListNotFoundException {
-        return null;
+        return new ArrayList<CarPark>();
     }
 
     @Override
-    public void updateCarPark(CarPark carPark) throws EntryNotFoundException {
-
+    public CarPark updateCarPark(CarPark carPark) throws EntryNotFoundException {
+        return carPark;
     }
 
     @Override
-    public void deleteCarPark(CarPark carPark) throws EntryNotFoundException {
-
+    public boolean deleteCarPark(CarPark carPark) throws EntryNotFoundException {
+        return false;
     }
 }

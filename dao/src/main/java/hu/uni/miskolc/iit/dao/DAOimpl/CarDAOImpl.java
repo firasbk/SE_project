@@ -5,6 +5,7 @@ import hu.uni.miskolc.iit.dao.CarDAO;
 import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class CarDAOImpl implements CarDAO {
@@ -16,7 +17,7 @@ public class CarDAOImpl implements CarDAO {
 
     @Override
     public Collection<Car> listCars() throws ListNotFoundException {
-        return null;
+        return new ArrayList<Car>();
     }
 
     @Override

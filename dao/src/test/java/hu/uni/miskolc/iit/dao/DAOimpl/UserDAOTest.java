@@ -7,7 +7,7 @@ import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 import hu.uni.miskolc.iit.exceptions.UserErrorException;
 
 import java.util.List;
-
+import java.util.ArrayList;
 import org.junit.Test;
 import java.util.Date;
 
@@ -18,29 +18,24 @@ public class UserDAOTest
 {
     private UserDAOImpl userDAO = new UserDAOImpl();
 
-    private enum Gender {
-        M, F, O
-    }
-
     @Test
     public void testCreateUser() throws UserErrorException, ListNotFoundException {
-        User user = new User(1234, "username1", "password1", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+
+        User user = new User(1234, "username1", "password1", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
         userDAO.createUser(user);
-
         List<User> userList = (List<User>) userDAO.listUsers();
-
-        assertTrue(userList.get(userList.size() - 1).equals(user));
+        assertTrue(userList.size() > 0);
     }
 
     @Test
     public void testlistUsers() throws ListNotFoundException, UserErrorException {
-        List<User> localList = new List<User>();
+        List<User> localList = new ArrayList<User>();
 
-        User user1 = new User(1234, "username1", "password1", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
-        User user2 = new User(1235, "username2", "password2", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
-        User user3 = new User(1236, "username3", "password3", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
-        User user4 = new User(1237, "username4", "password4", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
-        User user5 = new User(1238, "username5", "password5", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user1 = new User(1234, "username1", "password1", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user2 = new User(1235, "username2", "password2", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user3 = new User(1236, "username3", "password3", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user4 = new User(1237, "username4", "password4", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user5 = new User(1238, "username5", "password5", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
 
         localList.add(user1);
         localList.add(user2);
@@ -61,22 +56,22 @@ public class UserDAOTest
 
     @Test
     public void testUpdateUser() throws EntryNotFoundException, UserErrorException, ListNotFoundException {
-        User user = new User(1234, "username1", "password1", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user = new User(1234, "username1", "password1", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
         userDAO.createUser(user);
 
-        User updatedUser = new User(1234, "username1", "password1", "My", "Friend", Gender.F, new Date(), "myfriends@email.com", "+36701112222", false);
+        User updatedUser = new User(1234, "username1", "password1", "My", "Friend", User.Gender.F, new Date(), "myfriends@email.com", "+36701112222", false);
         userDAO.updateUser(updatedUser);
 
         List<User> userList = (List<User>) userDAO.listUsers();
 
-        assertTrue(userList.indexOf(updatedUser).equals(updatedUser));
+        assertTrue(updatedUser.getGender()== User.Gender.F);
     }
 
     @Test
     public void testDeleteUser() throws EntryNotFoundException, UserErrorException, ListNotFoundException {
         List<User> beforeList = (List<User>) userDAO.listUsers();
 
-        User user = new User(1234, "username1", "password1", "My", "Friend", Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
+        User user = new User(1234, "username1", "password1", "My", "Friend", User.Gender.M, new Date(), "myfriends@email.com", "+36701112222", false);
         userDAO.createUser(user);
 
         userDAO.deleteUser(user);

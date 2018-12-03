@@ -1,6 +1,7 @@
 package hu.uni.miskolc.iit.service;
 import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 import hu.uni.miskolc.iit.exceptions.UserErrorException;
+import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 import hu.uni.miskolc.iit.dao.UserDAO;
 import hu.uni.miskolc.iit.model.User;
 
@@ -16,26 +17,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User userRegistration(User user) throws UserErrorException {
         try {
-            userdao.createUser(user);
+            return userdao.createUser(user);
         } catch (UserErrorException e) {
-            throw new UserErrorException;
+            throw new UserErrorException();
         }
     }
 
     @Override
-    //public boolean logger(User user) throws ListNotFoundException {
-        //try {
-        //   userdao.listUsers()
-        //}
-        //return false;
-    //}
-
-    @Override
-    public void userModification(User user) throws EntryNotFoundException {
+    public User userModification(User user) throws EntryNotFoundException {
         try {
-            userdao.updateUser(user);
+            return userdao.updateUser(user);
         } catch (EntryNotFoundException e) {
-            throw new EntryNotFoundException;
+            throw new EntryNotFoundException();
         }
     }
 
@@ -44,7 +37,7 @@ public class UserServiceImpl implements UserService {
         try {
             userdao.deleteUser(user);
         } catch (EntryNotFoundException e) {
-            throw new EntryNotFoundException;
+            throw new EntryNotFoundException();
         }
     }
 }

@@ -8,25 +8,27 @@ import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 
 import java.util.Collection;
 
+import java.util.ArrayList;
+
 public class CarRentDAOImpl implements CarRentDAO {
 
     @Override
-    public void createCarRent(CarRent carRent) throws CarRentErrorException {
-
+    public CarRent createCarRent(CarRent carRent) throws CarRentErrorException {
+        return carRent;
     }
 
     @Override
     public Collection<CarRent> listCarRents() throws ListNotFoundException {
-        return null;
+        return new ArrayList<CarRent>();
     }
 
     @Override
-    public void updateCarRent(CarRent carRent) throws EntryNotFoundException {
-
+    public CarRent updateCarRent(CarRent carRent) throws EntryNotFoundException {
+        return carRent;
     }
 
     @Override
-    public void deleteCarRent(CarRent carRent) throws EntryNotFoundException {
-
+    public boolean deleteCarRent(CarRent carRent) throws EntryNotFoundException {
+        return false;
     }
 }

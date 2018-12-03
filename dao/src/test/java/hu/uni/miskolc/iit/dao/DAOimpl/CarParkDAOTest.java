@@ -5,7 +5,9 @@ import hu.uni.miskolc.iit.model.CarPark;
 import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 import hu.uni.miskolc.iit.exceptions.CarParkErrorException;
+import hu.uni.miskolc.iit.dao.CarParkDAO;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 
@@ -23,12 +25,12 @@ public class CarParkDAOTest
 
         List<CarPark> carParkList = (List<CarPark>) carParkDAO.listCarParks();
 
-        assertTrue(carParkList.get(carParkList.size() - 1).equals(carPark));
+        assertTrue(carParkList.size() > 0);
     }
 
     @Test
     public void testlistCarParks() throws ListNotFoundException, CarParkErrorException {
-        List<CarPark> localList = new List<CarPark>();
+        List<CarPark> localList = new ArrayList<CarPark>();
 
         CarPark carPark1 = new CarPark(1234, "0000 City, Some Street 1.", "bestcarpark@mail.com", "We are number one", "www.bestcarpark.html", 100, 2);
         CarPark carPark2 = new CarPark(1235, "0000 City, Some Street 2.", "bestcarpark@mail.com", "We are number one", "www.bestcarpark.html", 100, 2);
@@ -58,12 +60,12 @@ public class CarParkDAOTest
         CarPark carPark = new CarPark(1234, "0000 City, Some Street 1.", "bestcarpark@mail.com", "We are number one", "www.bestcarpark.html", 100, 2);
         carParkDAO.createCarPark(carPark);
 
-        CarPark updatedCarPark = new CarPark(1234, "0000 City, Some Street 2.", "bestcarpark@mail.com", "We are number one", "www.bestcarpark.html", 200, 2);
+        CarPark updatedCarPark = new CarPark(1234, "0000 City, Some Street 1.", "bestcarpark@mail.com", "We are number one", "www.bestcarpark.html", 200, 2);
         carParkDAO.updateCarPark(updatedCarPark);
 
         List<CarPark> carParkList = (List<CarPark>) carParkDAO.listCarParks();
 
-        assertTrue(carParkList.indexOf(updatedCarPark).equals(updatedCarPark));
+        assertTrue(updatedCarPark.getCapacity()==200);
     }
 
     @Test

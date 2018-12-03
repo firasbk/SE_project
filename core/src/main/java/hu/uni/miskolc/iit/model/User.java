@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class User {
 
-    private enum Gender {
+    public enum Gender {
         M, F, O
     }
 
@@ -17,9 +17,9 @@ public class User {
     private Date dob;
     private String email;
     private String phone;
-    private boolean isManeger;
+    private boolean isManager;
 
-    public User(int id, String username, String password, String firstName, String lastName, Gender gender, Date dob, String email, String phone, boolean isManeger) {
+    public User(int id, String username, String password, String firstName, String lastName, Gender gender, Date dob, String email, String phone, boolean isManager) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -29,7 +29,7 @@ public class User {
         this.dob = dob;
         this.email = email;
         this.phone = phone;
-        this.isManeger = isManeger;
+        this.isManager = isManager;
     }
 
     public int getId() {
@@ -104,12 +104,12 @@ public class User {
         this.phone = phone;
     }
 
-    public boolean isManeger() {
-        return isManeger;
+    public boolean isManager() {
+        return isManager;
     }
 
-    public void setManeger(boolean maneger) {
-        isManeger = maneger;
+    public void setManeger(boolean manager) {
+        isManager = manager;
     }
 
     @Override
@@ -124,7 +124,7 @@ public class User {
                 ", dob=" + dob +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", isManeger=" + isManeger +
+                ", isManeger=" + isManager +
                 '}';
     }
 }

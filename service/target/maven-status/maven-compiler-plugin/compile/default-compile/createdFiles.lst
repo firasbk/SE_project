@@ -1,7 +1,3 @@
-hu\uni\miskolc\iit\dao\App.class
-hu\uni\miskolc\iit\dao\UserDAO.class
-hu\uni\miskolc\iit\dao\CarDAO.class
-hu\uni\miskolc\iit\dao\CarParkDAO.class
-hu\uni\miskolc\iit\dao\CarRentDAO.class
 hu\uni\miskolc\iit\service\UserServiceImpl.class
 hu\uni\miskolc\iit\service\CarServiceImpl.class
+hu\uni\miskolc\iit\App.class

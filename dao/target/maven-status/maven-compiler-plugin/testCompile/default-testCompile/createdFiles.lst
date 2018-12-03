@@ -1,3 +1,5 @@
-hu\uni\miskolc\iit\dao\dao\DAOimpl\AppTest.class
-hu\uni\miskolc\iit\dao\dao\DAOimpl\UserDAOTest.class
-hu\uni\miskolc\iit\dao\dao\DAOimpl\CarDAOTest.class
+hu\uni\miskolc\iit\dao\DAOimpl\AppTest.class
+hu\uni\miskolc\iit\dao\DAOimpl\CarParkDAOTest.class
+hu\uni\miskolc\iit\dao\DAOimpl\CarDAOTest.class
+hu\uni\miskolc\iit\dao\DAOimpl\UserDAOTest.class
+hu\uni\miskolc\iit\dao\DAOimpl\CarRentDAOTest.class

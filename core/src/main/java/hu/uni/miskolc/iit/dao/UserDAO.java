@@ -16,10 +16,10 @@ import java.util.Collection;
  */
 public interface UserDAO {
 
-    void createUser(User user) throws UserErrorException;
+    User createUser(User user) throws UserErrorException;
 
     Collection<User> listUsers() throws ListNotFoundException;
 
-    void updateUser(User user) throws EntryNotFoundException;
-    void deleteUser(User user) throws EntryNotFoundException;
+    User updateUser(User user) throws EntryNotFoundException;
+    boolean deleteUser(User user) throws EntryNotFoundException;
 }

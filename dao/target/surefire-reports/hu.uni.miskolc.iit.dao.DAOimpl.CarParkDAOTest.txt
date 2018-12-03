@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: hu.uni.miskolc.iit.dao.DAOimpl.CarParkDAOTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in hu.uni.miskolc.iit.dao.DAOimpl.CarParkDAOTest
+testCreateCarPark(hu.uni.miskolc.iit.dao.DAOimpl.CarParkDAOTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at hu.uni.miskolc.iit.dao.DAOimpl.CarParkDAOTest.testCreateCarPark(CarParkDAOTest.java:28)
+
+testlistCarParks(hu.uni.miskolc.iit.dao.DAOimpl.CarParkDAOTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at hu.uni.miskolc.iit.dao.DAOimpl.CarParkDAOTest.testlistCarParks(CarParkDAOTest.java:55)
+
