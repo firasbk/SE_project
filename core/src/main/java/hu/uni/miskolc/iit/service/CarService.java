@@ -26,12 +26,12 @@ public interface CarService {
      * @param car
      * @return
      */
-    public Car carModification(Car car) throws CarErrorException;
+    public Car carModification(Car car) throws EntryNotFoundException;
 
     /**
      * @param car
      * @return
      */
-    public boolean carDelete(Car car) throws CarErrorException;
+    public boolean carDelete(Car car) throws EntryNotFoundException;
 
 }
