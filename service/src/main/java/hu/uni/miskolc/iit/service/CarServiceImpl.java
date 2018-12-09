@@ -18,37 +18,39 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car carCreation(Car car) throws CarErrorException {
-        try {
-            return cardao.createCar(car);
-        } catch (CarErrorException e) {
-            throw new CarErrorException();
+        if ( car == null ){
+            throw new CarErrorException;
         }
+        return cardao.createCar(car);
     }
 
     @Override
     public Collection<Car> carList() throws ListNotFoundException {
+        List<Car> listedCars;
         try {
-            return cardao.listCars();
+             listedCars = (List<Car>) cardao.listCars();
         } catch (ListNotFoundException e) {
             throw new ListNotFoundException();
         }
+        if ( listedCars == null ) {
+            throw new ListNotFoundException();
+        }
+        return listedCars;
     }
 
     @Override
     public Car carModification(Car car) throws CarErrorException {
-        try {
-            return cardao.updateCar(car);
-        } catch (EntryNotFoundException e) {
-            throw new CarErrorException();
+        if ( car == null ){
+            throw new CarErrorException;
         }
+        return cardao.updateCar(car);
     }
 
     @Override
     public boolean carDelete(Car car) throws CarErrorException {
-        try {
-            return cardao.deleteCar(car);
-        } catch (EntryNotFoundException e) {
-            throw new CarErrorException();
+        if ( car == null ){
+            throw new CarErrorException;
         }
+        return cardao.deleteCar(car);
     }
 }
