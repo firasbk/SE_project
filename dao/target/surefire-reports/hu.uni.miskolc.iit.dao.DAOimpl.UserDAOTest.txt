@@ -1,12 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest
-testCreateUser(hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest
+testCreateUser(hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
 	at hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest.testCreateUser(UserDAOTest.java:27)
 
-testlistUsers(hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError
+testlistUsers(hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
 	at hu.uni.miskolc.iit.dao.DAOimpl.UserDAOTest.testlistUsers(UserDAOTest.java:54)
 

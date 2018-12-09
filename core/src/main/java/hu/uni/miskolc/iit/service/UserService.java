@@ -21,12 +21,12 @@ public interface UserService {
      *
      * @param user
      */
-    public User userModification(User user) throws EntryNotFoundException;
+    public User userModification(User user) throws UserErrorException;
 
     /**
      *
      * @param user
      */
-    public void userDelete(User user) throws EntryNotFoundException;
+    public boolean userDelete(User user) throws UserErrorException;
 
 }

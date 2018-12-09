@@ -1,12 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.038 s <<< FAILURE! - in hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest
-testCreateCar(hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest)  Time elapsed: 0.001 s  <<< FAILURE!
-java.lang.AssertionError
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest
+testCreateCar(hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
 	at hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest.testCreateCar(CarDAOTest.java:29)
 
-testListCars(hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError
+testListCars(hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
 	at hu.uni.miskolc.iit.dao.DAOimpl.CarDAOTest.testListCars(CarDAOTest.java:56)
 

@@ -20,6 +20,6 @@ public interface UserDAO {
 
     Collection<User> listUsers() throws ListNotFoundException;
 
-    User updateUser(User user) throws EntryNotFoundException;
-    boolean deleteUser(User user) throws EntryNotFoundException;
+    User updateUser(User user) throws UserErrorException;
+    boolean deleteUser(User user) throws UserErrorException;
 }
