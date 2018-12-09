@@ -24,7 +24,7 @@ public class CarServiceImplTest {
     }
 
     @Test
-    public void testValidCarList() throws ListNotFoundException {
+    public void testValidCarList() throws ListNotFoundException, CarErrorException {
         List<Car> localList = new ArrayList<Car>();
         Car testCar1 = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
         Car testCar2 = new Car(1235, "A8", "Black", "Audi", "ABC-124", 2017, 1);
@@ -40,7 +40,7 @@ public class CarServiceImplTest {
     public void testValidCarModification() throws CarErrorException {
         Car testCar = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
         Car modifiedCar = new Car(1234, "A8", "Black", "Audi", "ABC-123", 2017, 2);
-        carService.carModification(testCar);
+        carService.carModification(modifiedCar);
         Assert.assertEquals(testCar.getColor(), modifiedCar.getColor());
     }
 
