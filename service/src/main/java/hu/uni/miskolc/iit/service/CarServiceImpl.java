@@ -39,17 +39,17 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car carModification(Car car) throws CarErrorException {
+    public Car carModification(Car car) throws EntryNotFoundException {
         if ( car == null ){
-            throw new CarErrorException();
+            throw new EntryNotFoundException();
         }
         return cardao.updateCar(car);
     }
 
     @Override
-    public boolean carDelete(Car car) throws CarErrorException {
+    public boolean carDelete(Car car) throws EntryNotFoundException {
         if ( car == null ){
-            throw new CarErrorException();
+            throw new EntryNotFoundException();
         }
         return cardao.deleteCar(car);
     }

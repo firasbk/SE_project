@@ -3,6 +3,7 @@ package hu.uni.miskolc.iit.service;
 import hu.uni.miskolc.iit.model.Car;
 import hu.uni.miskolc.iit.exceptions.CarErrorException;
 import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
+import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 import java.util.Collection;
@@ -37,7 +38,7 @@ public class CarServiceImplTest {
     }
 
     @Test
-    public void testValidCarModification() throws CarErrorException {
+    public void testValidCarModification() throws EntryNotFoundException {
         Car testCar = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
         Car modifiedCar = new Car(1234, "A8", "Black", "Audi", "ABC-123", 2017, 2);
         carService.carModification(modifiedCar);
@@ -45,7 +46,7 @@ public class CarServiceImplTest {
     }
 
     @Test
-    public void testValidCarDelete() throws CarErrorException {
+    public void testValidCarDelete() throws EntryNotFoundException {
         Car deletedCar = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
         Assert.assertTrue(carService.carDelete(deletedCar));
     }
@@ -63,14 +64,14 @@ public class CarServiceImplTest {
     }
 
     @Test
-    public void testInvalidCarModification() throws CarErrorException {
-        expectException.expect(CarErrorException.class);
+    public void testInvalidCarModification() throws EntryNotFoundException {
+        expectException.expect(EntryNotFoundException.class);
         carService.carModification(null);
     }
 
     @Test
-    public void testInvalidCarDelete() throws CarErrorException {
-        expectException.expect(CarErrorException.class);
+    public void testInvalidCarDelete() throws EntryNotFoundException {
+        expectException.expect(EntryNotFoundException.class);
         carService.carDelete(null);
     }
 }
