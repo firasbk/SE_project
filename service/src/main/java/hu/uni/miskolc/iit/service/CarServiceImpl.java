@@ -9,9 +9,12 @@ public class CarServiceImpl implements CarService {
 
     private CarDAO cardao;
 
+    public CarServiceImpl() { this.cardao = new CarDAO(); }
+    
     public CarServiceImpl(CarDAO cardao) {
         this.cardao = cardao;
     }
+
 
     @Override
     public Car carCreation(Car car) throws CarErrorException {
