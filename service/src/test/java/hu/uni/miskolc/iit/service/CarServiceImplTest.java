@@ -14,7 +14,7 @@ public class CarServiceImplTest {
     @Rule
     public ExpectedException expectException = ExpectedException.none();
 
-    CarService carService = new CarServiceImpl();
+    CarServiceImpl carService = new CarServiceImpl();
 
     @Test
     public void testValidCarCreation() throws CarErrorException {
@@ -40,14 +40,14 @@ public class CarServiceImplTest {
     public void testValidCarModification() throws CarErrorException {
         Car testCar = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
         Car modifiedCar = new Car(1234, "A8", "Black", "Audi", "ABC-123", 2017, 2);
-        carService.carModification(modifiedCar);
+        carService.carModification(testCar);
         Assert.assertEquals(testCar.getColor(), modifiedCar.getColor());
     }
 
     @Test
     public void testValidCarDelete() throws CarErrorException {
-        Car deleteCar = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
-        Assert.assertTrue(carService.carDelete(deleteCar));
+        Car deletedCar = new Car(1234, "A8", "Silver", "Audi", "ABC-123", 2017, 2);
+        Assert.assertTrue(carService.carDelete(deletedCar));
     }
 
     @Test
