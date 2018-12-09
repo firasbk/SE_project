@@ -22,12 +22,12 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User updateUser(User user) throws EntryNotFoundException {
+    public User updateUser(User user) throws UserErrorException {
         return user;
     }
 
     @Override
-    public boolean deleteUser(User user) throws EntryNotFoundException {
-        return false;
+    public boolean deleteUser(User user) throws UserErrorException {
+        return true;
     }
 }
