@@ -1,7 +1,9 @@
 package hu.uni.miskolc.iit.service;
 import hu.uni.miskolc.iit.model.Car;
 import hu.uni.miskolc.iit.dao.CarDAO;
-import hu.uni.miskolc.iit.exceptions.*;
+import hu.uni.miskolc.iit.exceptions.CarErrorException;
+import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
+import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 
 import java.util.Collection;
 
