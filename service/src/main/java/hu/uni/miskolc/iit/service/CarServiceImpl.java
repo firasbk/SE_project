@@ -1,4 +1,5 @@
 package hu.uni.miskolc.iit.service;
+import hu.uni.miskolc.iit.dao.DAOimpl.CarDAOImpl;
 import hu.uni.miskolc.iit.model.Car;
 import hu.uni.miskolc.iit.dao.CarDAO;
 import hu.uni.miskolc.iit.exceptions.CarErrorException;
@@ -6,12 +7,13 @@ import hu.uni.miskolc.iit.exceptions.ListNotFoundException;
 import hu.uni.miskolc.iit.exceptions.EntryNotFoundException;
 
 import java.util.Collection;
+import java.util.List;
 
 public class CarServiceImpl implements CarService {
 
     private CarDAO cardao;
 
-    public CarServiceImpl() {}
+    public CarServiceImpl() { this.cardao = new CarDAOImpl();}
 
     public CarServiceImpl(CarDAO cardao) {
         this.cardao = cardao;
@@ -34,10 +36,10 @@ public class CarServiceImpl implements CarService {
         } catch (ListNotFoundException e) {
             throw new ListNotFoundException();
         }
-        if ( listedCars == null ) {
+        if ( listedCars == null || listedCars.size() == 0 ) {
             throw new ListNotFoundException();
         }
-        return listedCars;
+        return (Collection<Car>) listedCars;
     }
 
     @Override
